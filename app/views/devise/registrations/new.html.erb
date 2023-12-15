@@ -1,6 +1,17 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <% if resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.label :username %>
   <%= f.text_field :username %>
 
@@ -15,6 +26,9 @@
 
   <%= f.label :gender %>
   <%= f.text_field :gender %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
 
   <%= f.label :password %>
   <%= f.password_field :password %>
