@@ -10,6 +10,7 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+1. Set environment variables for database: db_username and db_password
 
 * Database creation
 
