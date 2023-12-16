@@ -59,6 +59,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 5.0'
   gem 'rails-controller-testing'
+  gem 'capybara'
 end
 
 group :development do
