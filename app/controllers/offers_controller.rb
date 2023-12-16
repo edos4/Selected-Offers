@@ -4,7 +4,7 @@ class OffersController < ApplicationController
 
   # GET /offers or /offers.json
   def index
-    @offers = Offer.where("start_age <= ? AND end_age >= ?", current_user.age, current_user.age)
+    @offers = Offer.where("start_age <= ? AND end_age >= ? and gender = ?", current_user.age, current_user.age, current_user.gender)
   end
 
   # GET /offers/1 or /offers/1.json
