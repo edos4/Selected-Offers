@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 
 gem 'devise'
 gem 'actionview', '7.0.8'
+gem 'webpacker'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -58,6 +59,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails', '~> 5.0'
   gem 'rails-controller-testing'
+  gem 'capybara'
 end
 
 group :development do

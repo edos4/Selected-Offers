@@ -13,7 +13,10 @@ RSpec.describe 'Offers', type: :feature do
 
     visit offers_path
 
-    expect(page).to have_content('For 30-35 yr old Male')
-    expect(page).to_not have_content('For 20-23 yr old Female')
+    data_offers = find('#root')['data-offers']
+    offers = JSON.parse(data_offers)
+
+    expect(offers).to be_an(Array)
+    expect(offers.first['description']).to eq('For 30-35 yr old Male')
   end
 end

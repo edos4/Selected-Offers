@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<%= javascript_pack_tag 'application' %>
 
-<h1>Offers</h1>
+<div id="root" data-offers='<%= raw @offers.to_json %>'></div>
 
-<div id="offers">
-  <% @offers.each do |offer| %>
-    <%= render offer %>
-    <p>
-      <%= link_to "Show this offer", offer %>
-    </p>
-  <% end %>
-</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var offers = JSON.parse(document.getElementById('root').getAttribute('data-offers'));
 
-<%= link_to "New offer", new_offer_path %>
+    ReactDOM.render(<OffersList offers={offers} />, document.getElementById('root'));
+  });
+</script>
